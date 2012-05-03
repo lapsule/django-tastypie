@@ -8,10 +8,10 @@ except ImportError:
     from setuptools import setup
 
 setup(
-    name='django-tastypie',
+    name='django-tastypie-ruiking-with-image-upload-patch',
     version='0.9.11',
-    description='A flexible & capable API layer for Django.',
-    author='Daniel Lindsley',
+    description='A flexible & capable API layer for Django. With file uploading patch',
+    author='Daniel Lindsley, ruiking,',
     author_email='daniel@toastdriven.com',
     url='http://github.com/toastdriven/django-tastypie/',
     long_description=open('README.rst', 'r').read(),
