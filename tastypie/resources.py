@@ -360,7 +360,7 @@ class Resource(object):
 
         if format == 'application/x-www-form-urlencoded':
             deserialized = request.POST
-        elif format.startwith('multipart'):
+        elif format.startswith('multipart'):
             deserialized = request.POST.copy()
             deserialized.update(request.FILES)
         else:
@@ -1202,7 +1202,7 @@ class Resource(object):
         If ``Meta.always_return_data = True``, there will be a populated body
         of serialized data.
         """
-        deserialized = self.deserialize(request, request.raw_post_data, format=request.META.get('CONTENT_TYPE', 'application/json'))
+#        deserialized = self.deserialize(request, request.raw_post_data, format=request.META.get('CONTENT_TYPE', 'application/json'))
         deserialized = self.deserialize(request, format=request.META.get('CONTENT_TYPE', 'application/json'))
         deserialized = self.alter_deserialized_detail_data(request, deserialized)
         bundle = self.build_bundle(data=dict_strip_unicode_keys(deserialized), request=request)
